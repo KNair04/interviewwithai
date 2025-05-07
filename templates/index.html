@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Interview Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo-interview.jpg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Interview Assistant</h1>
+      <p>Elevate your interview skills with AI-powered feedback and analysis</p>
+    </header>
+    <main>
+      <!-- Start Interview Page -->
+      <section id="start-section" class="card">
+        <h2>Welcome to Your Interview Session</h2>
+        <p>Get ready to showcase your skills in a simulated interview environment. Our AI will analyze your performance and provide detailed feedback to help you improve.</p>
+        <button id="startInterviewButton" class="btn btn-primary">Begin Interview</button>
+      </section>
+      
+      <!-- Interview Preparation & Recording Page -->
+      <section id="interview-section" class="card hidden">
+        <div id="question-container">
+          <h2>Your Interview Question</h2>
+          <p id="interview-question"></p>
+          <p class="instructions">Take 20 seconds to prepare your response. When the timer ends, recording will begin automatically.</p>
+        </div>
+        <div id="timer-container">
+          <div id="preparation-timer" class="timer">
+            Preparation Time <span id="prep-time">00:20</span>
+          </div>
+          <div id="recording-timer" class="timer hidden">
+            Recording <span id="rec-time">00:30</span>
+          </div>
+        </div>
+        <div id="video-container" class="hidden">
+          <video id="videoElement" autoplay muted></video>
+        </div>
+        <div id="status-message" class="status"></div>
+      </section>
+      
+      <!-- Result Page -->
+      <section id="result-section" class="card hidden">
+        <h2>Performance Analysis</h2>
+        <div id="progress-bar-container" class="hidden">
+          <div id="analysis-progress"></div>
+        </div>
+        <div id="result" class="result-container">
+          <div id="loading-message" class="loading">Analyzing your interview response</div>
+          <p class="instructions">Please wait while our AI analyzes your performance. This may take 3-4 minutes.</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2025 AI Interview Assistant | Powered by Advanced AI Analysis</p>
+    </footer>
+  </div>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
